@@ -70,7 +70,9 @@ namespace Menu
                     Helpers helper=new Helpers();
                     Console.WriteLine("Tast inn en string");
                     bool isNumeric = helper.IsStringNumeric(Console.ReadLine());//her er det en bug jeg har lagt ut. Løser du den?
+                    Console.Clear();
                     Console.WriteLine(isNumeric);
+                    Console.WriteLine();
                 }
                 if (choice == "q" || choice == "Q")
                 {

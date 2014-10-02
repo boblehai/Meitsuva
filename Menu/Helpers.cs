@@ -14,7 +14,7 @@ namespace Menu
         /// <param name="s">String to be tested</param>
         /// <returns>bool</returns>
        
-        bool IsStringNumeric(string s)// 48 - 59 som ascii er fra 0-9. Om tegnene er innenfor dette, betyr det at stringen er et tall.
+        public bool IsStringNumeric(string s)// 48 - 59 som ascii er fra 0-9. Om tegnene er innenfor dette, betyr det at stringen er et tall.
         {
             //introducing arrays and the datatype char. char is only one sign. eg. 'd'. char=character.
             //[] is the symbol for an array. can contain multiple variables of the same type.
