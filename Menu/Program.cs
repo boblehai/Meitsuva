@@ -20,41 +20,53 @@ namespace Menu
         //lykke til! Og for all del, spør om det trengs!
         static void Main(string[] args)
         {
-            Program prog=new Program();
+            Program prog = new Program();
             string choice;
+            int temp;
 
             Console.WriteLine("Velommen til superprogrammet. Her kan du konvertere stuff!");
-            Console.WriteLine("Tast 1 for: kg til pund");//for mange desimaler? sjekk ut Class Math! Her finnes avrundingsfunksjoner.
-            Console.WriteLine("Tast 2 for: Celcius til fahrenheit");
-            Console.WriteLine("Tast 3 for: Meter til fot");
-            //mer ?
-            choice = Console.ReadLine();//users choice
-            if(choice == "1")
+            while (true)
             {
-                double kg;
-                Console.WriteLine("Tast in antall kg");
-                kg = double.Parse(Console.ReadLine());
-                double pounds = prog.ConvertKgToPounds(kg);
-                Console.WriteLine(kg + " kg" +" = " + pounds + " pounds");
-                Console.ReadLine();
-            }
-            if(choice == "2")
-            {
-                double c;
-                Console.WriteLine("Tast in antall celcius");
-                c = double.Parse(Console.ReadLine());
-                double f = prog.CelsiusToFahrenheit(c);
-                Console.WriteLine(c + " °C" + " = " + f + " °F");
-                Console.ReadLine();
-            }
-            if (choice == "3")
-            {
-                double meter;
-                Console.WriteLine("Tast in antall meter");
-                meter = double.Parse(Console.ReadLine());
-                double feet = prog.CelsiusToFahrenheit(meter);
-                Console.WriteLine(meter + " meter" + " = " + feet + " fot");
-                Console.ReadLine();
+                Console.WriteLine("Tast 1 for: kg til pund");//for mange desimaler? sjekk ut Class Math! Her finnes avrundingsfunksjoner.
+                Console.WriteLine("Tast 2 for: Celcius til fahrenheit");
+                Console.WriteLine("Tast 3 for: Meter til fot");
+                Console.WriteLine("Tast Q for: Avslutte program");
+                //mer ?
+                choice = Console.ReadLine();//users choice
+                if (choice == "1")
+                {
+                    double kg;
+                    Console.WriteLine("Tast in antall kg");
+                    kg = double.Parse(Console.ReadLine());
+                    double pounds = prog.ConvertKgToPounds(kg);
+                    Console.Clear();
+                    Console.WriteLine(kg + " kg" + " = " + pounds + " pounds");
+                    Console.WriteLine();
+                }
+                if (choice == "2")
+                {
+                    double c;
+                    Console.WriteLine("Tast in antall celcius");
+                    c = double.Parse(Console.ReadLine());
+                    double f = prog.CelsiusToFahrenheit(c);
+                    Console.Clear();
+                    Console.WriteLine(c + " °C" + " = " + f + " °F");
+                    Console.WriteLine();
+                }
+                if (choice == "3")
+                {
+                    double meter;
+                    Console.WriteLine("Tast in antall meter");
+                    meter = double.Parse(Console.ReadLine());
+                    double feet = prog.CelsiusToFahrenheit(meter);
+                    Console.Clear();
+                    Console.WriteLine(meter + " meter" + " = " + feet + " fot");
+                    Console.WriteLine();
+                }
+                if (choice == "q" || choice == "Q")
+                {
+                    break;
+                }
             }       
         }
 
