@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace Menu
 {
     class Program
@@ -30,6 +31,7 @@ namespace Menu
                 Console.WriteLine("Tast 1 for: kg til pund");//for mange desimaler? sjekk ut Class Math! Her finnes avrundingsfunksjoner.
                 Console.WriteLine("Tast 2 for: Celcius til fahrenheit");
                 Console.WriteLine("Tast 3 for: Meter til fot");
+                Console.WriteLine("Tast 4 for: Sjekk om string er et tall");
                 Console.WriteLine("Tast Q for: Avslutte program");
                 //mer ?
                 choice = Console.ReadLine();//users choice
@@ -62,6 +64,13 @@ namespace Menu
                     Console.Clear();
                     Console.WriteLine(meter + " meter" + " = " + feet + " fot");
                     Console.WriteLine();
+                }
+                if (choice == "4")
+                {
+                    Helpers helper=new Helpers();
+                    Console.WriteLine("Tast inn en string");
+                    bool isNumeric = helper.IsStringNumeric(Console.ReadLine());
+                    Console.WriteLine(isNumeric);
                 }
                 if (choice == "q" || choice == "Q")
                 {
