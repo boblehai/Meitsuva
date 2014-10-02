@@ -69,7 +69,7 @@ namespace Menu
                 {
                     Helpers helper=new Helpers();
                     Console.WriteLine("Tast inn en string");
-                    bool isNumeric = helper.IsStringNumeric(Console.ReadLine());//her er det en bug jeg har lagt ut. Løser du den?
+                    bool isNumeric = helper.IsStringNumeric(Console.ReadLine());//her er det en bug jeg har lagt ut. Løser du den? ja måtte bare legge på public på IsStringNumeric bool'en på Helpers.cs: public bool IsStringNumeric(string s).
                     Console.Clear();
                     Console.WriteLine(isNumeric);
                     Console.WriteLine();
