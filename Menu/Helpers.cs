@@ -6,14 +6,16 @@ using System.Threading.Tasks;
 
 namespace Menu
 {
-    class Helpers//an example for using an external file containing one class, with some help methods
+    public class Helpers//an example for using an external file containing one class, with some help methods
     {
         /// <summary>
         /// Check if a string is numeric. Only working with whole numbers. No decimals. Because of the char ','
         /// </summary>
         /// <param name="s">String to be tested</param>
         /// <returns>bool</returns>
-       
+
+        //public Helpers() { }
+
         public bool IsStringNumeric(string s)// 48 - 59 som ascii er fra 0-9. Om tegnene er innenfor dette, betyr det at stringen er et tall.
         {
             //introducing arrays and the datatype char. char is only one sign. eg. 'd'. char=character.

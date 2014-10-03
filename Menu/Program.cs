@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using Menu;
 
 namespace Menu
 {
@@ -25,6 +25,8 @@ namespace Menu
             string choice;
             int temp;
 
+        
+
             Console.WriteLine("Velommen til superprogrammet. Her kan du konvertere stuff!");
             while (true)
             {
@@ -32,7 +34,9 @@ namespace Menu
                 Console.WriteLine("Tast 2 for: Celcius til fahrenheit");
                 Console.WriteLine("Tast 3 for: Meter til fot");
                 Console.WriteLine("Tast 4 for: Sjekk om string er et tall");
+                Console.WriteLine("Tast 5 for sorteringer av collections.");
                 Console.WriteLine("Tast Q for: Avslutte program");
+
                 //mer ?
                 choice = Console.ReadLine();//users choice
                 if (choice == "1")
@@ -67,13 +71,17 @@ namespace Menu
                 }
                 if (choice == "4")
                 {
-                    Helpers helper=new Helpers();
+                    Helpers helper = new Helpers();
                     Console.WriteLine("Tast inn en string");
                     bool isNumeric = helper.IsStringNumeric(Console.ReadLine());//her er det en bug jeg har lagt ut. Løser du den? ja måtte bare legge på public på IsStringNumeric bool'en på Helpers.cs: public bool IsStringNumeric(string s).
                     Console.Clear();
                     Console.WriteLine(isNumeric);
                     Console.WriteLine();
                 }
+
+                if (choice == "5")
+                    prog.SortingExamples();
+
                 if (choice == "q" || choice == "Q")
                 {
                     break;
@@ -112,6 +120,60 @@ namespace Menu
                     break;
                 }
             }
+        }
+
+        private void SortingExamples()
+        {
+            int[] numbersArray = { 1, 4, 2, 3, 5, 8, 6 };
+            Console.Clear();
+            Console.WriteLine("Innholdet til numbersArray:");
+            foreach (int i in numbersArray)
+                Console.WriteLine(i);
+
+            Array.Sort<int>(numbersArray);//sort the array
+            Console.WriteLine("Innholdet til numbersArray sortert:");
+            foreach (int i in numbersArray)
+                Console.WriteLine(i);
+
+            List<int> numbersList = new List<int>() { 1, 4, 2, 3, 5, 8, 6 };
+            Console.WriteLine("Innholdet til numbersList:");
+            foreach (int i in numbersList)
+                Console.WriteLine(i);
+
+            numbersList.Sort();//sort the list
+            Console.WriteLine("Innholdet til numbersList sortert:");
+            foreach (int i in numbersList)
+                Console.WriteLine(i);
+
+            //sorting using LINQ - coolness! intoducing datatype var. can contain everything.
+            int[] numbersArray2 = { 1, 4, 2, 3, 5, 8, 6 };//
+            var sortedArray = from num in numbersArray2//here we put the result from the sorting into a new variable. 
+                              orderby num
+                              select num;
+
+            Console.WriteLine("Innholdet til numbersArray2:");
+            foreach (int i in numbersArray2)
+                Console.WriteLine(i);
+
+            Console.WriteLine("Innholdet til sortedArray sortert:");
+            foreach (int i in sortedArray)
+                Console.WriteLine(i);
+
+            //using LINQ, but not using datatype var
+            int[] numbersArray3 = { 1, 4, 2, 3, 5, 8, 6 };
+
+            Console.WriteLine("Innholdet til numbersArray3:");
+            foreach (int i in numbersArray3)
+                Console.WriteLine(i);
+
+            numbersArray3 = (from num in numbersArray3
+                            orderby num
+                            select num).ToArray();
+
+            Console.WriteLine("Innholdet til numbersArray3 sortert:");
+            foreach (int i in numbersArray3)
+                Console.WriteLine(i);
+
         }
     }
 }
