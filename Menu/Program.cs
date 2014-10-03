@@ -155,7 +155,7 @@ namespace Menu
             foreach (int i in numbersArray2)
                 Console.WriteLine(i);
 
-            Console.WriteLine("Innholdet til sortedArray sortert:");
+            Console.WriteLine("Innholdet til sortedArray sortert:"); 
             foreach (int i in sortedArray)
                 Console.WriteLine(i);
 
